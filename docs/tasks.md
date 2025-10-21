@@ -2,10 +2,17 @@
 
 ## Phase 1: Core Canvas Setup 🎨
 
-- [ ] **Task: 1.1. Create Basic React/Vite + TS Project**
+- [x] **Task: 1.1. Create Basic React/Vite + TS Project**
     - **Acceptance Criteria (AC):**
-        - [ ] The project is initialized with `Vite` using the `React` and `TypeScript` template.
-        - [ ] The project runs locally (`npm run dev`) and displays the default splash page.
+        - [x] The project is initialized with `Vite` using the `React` and `TypeScript` template.
+        - [x] The project runs locally (`npm run dev`) and displays the default splash page.
+
+- [x] **Task: 1.1.2. Create README.md Documentation**
+    - **Acceptance Criteria (AC):**
+        - [x] A comprehensive README.md file is created in the project root.
+        - [x] The README includes project description, features, installation instructions, and usage guide.
+        - [x] The README includes technology stack information and project structure.
+        - [x] The README includes development guidelines and contribution instructions.
 
 - [ ] **Task: 1.2. Implement Canvas Size Modal**
     - **AC:**
