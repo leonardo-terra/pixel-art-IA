@@ -72,10 +72,11 @@ const PixelGrid: React.FC = () => {
     for (let y = 0; y < canvasSize.height; y++) {
       for (let x = 0; x < canvasSize.width; x++) {
         const pixelColor = getPixel(x, y);
+        const borderClass = showGrid ? 'with-border' : 'no-border';
         pixelElements.push(
           <div
             key={`${x}-${y}`}
-            className={`pixel ${showGrid ? 'with-border' : 'no-border'}`}
+            className={`pixel ${borderClass}`}
             style={{ 
               backgroundColor: pixelColor,
               cursor: getCursorStyle()
@@ -96,7 +97,7 @@ const PixelGrid: React.FC = () => {
   return (
     <div className="pixel-grid-container">
       <div 
-        className="pixel-grid"
+        className={`pixel-grid ${showGrid ? 'with-gap' : 'no-gap'}`}
         style={{
           gridTemplateColumns: `repeat(${canvasSize.width}, 1fr)`,
           gridTemplateRows: `repeat(${canvasSize.height}, 1fr)`,
