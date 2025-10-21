@@ -21,25 +21,25 @@
         - [x] There is a "Create" or "Start" button.
         - [x] Clicking "Create" closes the modal.
 
-- [ ] **Task: 1.3. Render the Pixel Grid (Canvas)**
+- [x] **Task: 1.3. Render the Pixel Grid (Canvas)**
     - **AC:**
-        - [ ] After the modal closes, a grid is rendered on the screen.
-        - [ ] The grid consists of `divs` (or `<canvas>` elements) with the exact `Width` x `Height` dimensions provided by the user.
-        - [ ] Each "pixel" (grid cell) is clearly visible with a border.
+        - [x] After the modal closes, a grid is rendered on the screen.
+        - [x] The grid consists of `divs` (or `<canvas>` elements) with the exact `Width` x `Height` dimensions provided by the user.
+        - [x] Each "pixel" (grid cell) is clearly visible with a border.
 
-- [ ] **Task: 1.4. Implement Basic Color Palette**
+- [x] **Task: 1.4. Implement Basic Color Palette**
     - **AC:**
-        - [ ] A palette component is visible on the screen.
-        - [ ] The palette displays at least 5 predefined colors (e.g., black, red, green, blue, white).
-        - [ ] Clicking a color stores it in the global state (Context API or Zustand/Redux) as the "active color."
-        - [ ] The selected color is visually highlighted in the palette.
+        - [x] A palette component is visible on the screen.
+        - [x] The palette displays at least 5 predefined colors (e.g., black, red, green, blue, white).
+        - [x] Clicking a color stores it in the global state (Context API or Zustand/Redux) as the "active color."
+        - [x] The selected color is visually highlighted in the palette.
 
-- [ ] **Task: 1.5. Implement Brush Tool (1x1)**
+- [x] **Task: 1.5. Implement Brush Tool (1x1)**
     - **AC:**
-        - [ ] The "Brush" tool is the default active tool.
-        - [ ] Clicking on a pixel in the grid changes that pixel's background color to the "active color."
-        - [ ] Clicking and dragging the mouse over the grid continuously paints all pixels the mouse passes over.
-        - [ ] The brush size is strictly `1x1` pixel.
+        - [x] The "Brush" tool is the default active tool.
+        - [x] Clicking on a pixel in the grid changes that pixel's background color to the "active color."
+        - [x] Clicking and dragging the mouse over the grid continuously paints all pixels the mouse passes over.
+        - [x] The brush size is strictly `1x1` pixel.
 
 ---
 

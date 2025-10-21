@@ -1,10 +1,15 @@
 import { useState } from 'react'
+import { PixelArtProvider, usePixelArt } from './contexts/PixelArtContext'
 import CanvasSizeModal from './components/CanvasSizeModal'
+import PixelGrid from './components/PixelGrid'
+import ColorPalette from './components/ColorPalette'
+import Toolbar from './components/Toolbar'
 import './App.css'
 
-function App() {
+const AppContent: React.FC = () => {
+  const { canvasSize, setCanvasSize } = usePixelArt()
   const [isModalOpen, setIsModalOpen] = useState(true)
-  const [canvasSize, setCanvasSize] = useState<{ width: number; height: number } | null>(null)
+  const [activeTool, setActiveTool] = useState('brush')
 
   const handleModalClose = (width: number, height: number) => {
     setCanvasSize({ width, height })
@@ -16,9 +21,14 @@ function App() {
       <h1>Pixel Art Editor</h1>
       
       {canvasSize ? (
-        <div className="canvas-container">
-          <p>Canvas created: {canvasSize.width} x {canvasSize.height} pixels</p>
-          <p>Canvas will be rendered here in the next task!</p>
+        <div className="editor-container">
+          <div className="editor-sidebar">
+            <Toolbar activeTool={activeTool} onToolChange={setActiveTool} />
+            <ColorPalette />
+          </div>
+          <div className="editor-main">
+            <PixelGrid />
+          </div>
         </div>
       ) : (
         <div className="welcome-message">
@@ -31,6 +41,14 @@ function App() {
         onClose={handleModalClose} 
       />
     </>
+  )
+}
+
+function App() {
+  return (
+    <PixelArtProvider>
+      <AppContent />
+    </PixelArtProvider>
   )
 }
 

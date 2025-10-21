@@ -1,0 +1,132 @@
+.toolbar {
+  background: white;
+  border-radius: 12px;
+  padding: 1.5rem;
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  margin: 1rem 0;
+  border: 1px solid #e5e7eb;
+}
+
+.toolbar h3 {
+  margin: 0 0 1rem 0;
+  color: #1f2937;
+  font-size: 1.125rem;
+  font-weight: 600;
+}
+
+.tool-buttons {
+  display: flex;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.tool-button {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.75rem 1rem;
+  border: 2px solid #e5e7eb;
+  border-radius: 8px;
+  background: white;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  min-width: 80px;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.05);
+}
+
+.tool-button:hover {
+  border-color: #3b82f6;
+  background: #f8fafc;
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tool-button.active {
+  border-color: #3b82f6;
+  background: #eff6ff;
+  box-shadow: 0 0 0 2px #3b82f6, 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.tool-icon {
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+.tool-name {
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: #6b7280;
+  text-align: center;
+}
+
+.tool-button.active .tool-name {
+  color: #3b82f6;
+  font-weight: 600;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+  .tool-buttons {
+    gap: 0.5rem;
+  }
+  
+  .tool-button {
+    min-width: 70px;
+    padding: 0.5rem 0.75rem;
+  }
+  
+  .tool-icon {
+    font-size: 1.25rem;
+  }
+  
+  .tool-name {
+    font-size: 0.7rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .tool-buttons {
+    justify-content: center;
+  }
+  
+  .tool-button {
+    min-width: 60px;
+    padding: 0.5rem;
+  }
+}
+
+/* Dark mode support */
+@media (prefers-color-scheme: dark) {
+  .toolbar {
+    background: #1f2937;
+    border-color: #374151;
+  }
+  
+  .toolbar h3 {
+    color: #f9fafb;
+  }
+  
+  .tool-button {
+    background: #374151;
+    border-color: #4b5563;
+  }
+  
+  .tool-button:hover {
+    border-color: #60a5fa;
+    background: #1e293b;
+  }
+  
+  .tool-button.active {
+    border-color: #60a5fa;
+    background: #1e3a8a;
+  }
+  
+  .tool-name {
+    color: #d1d5db;
+  }
+  
+  .tool-button.active .tool-name {
+    color: #60a5fa;
+  }
+}
