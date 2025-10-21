@@ -45,33 +45,33 @@
 
 ## Phase 2: Core Tools 🖌️
 
-- [ ] **Task: 2.1. Implement Eraser Tool (1x1)**
+- [x] **Task: 2.1. Implement Eraser Tool (1x1)**
     - **AC:**
-        - [ ] There is an "Eraser" button in the toolbar.
-        - [ ] Clicking it activates the eraser tool (and deactivates the brush).
-        - [ ] Clicking on a painted pixel reverts it to the background color (e.g., white or transparent).
-        - [ ] Clicking and dragging with the eraser continuously erases.
+        - [x] There is an "Eraser" button in the toolbar.
+        - [x] Clicking it activates the eraser tool (and deactivates the brush).
+        - [x] Clicking on a painted pixel reverts it to the background color (e.g., white or transparent).
+        - [x] Clicking and dragging with the eraser continuously erases.
 
-- [ ] **Task: 2.2. Implement Color Picker (Eyedropper)**
+- [x] **Task: 2.2. Implement Color Picker (Eyedropper)**
     - **AC:**
-        - [ ] There is a "Color Picker" button in the toolbar.
-        - [ ] Clicking it activates the tool.
-        - [ ] The mouse cursor changes to an "eyedropper" icon.
-        - [ ] Clicking on any pixel in the grid (painted or not) sets that pixel's color as the new "active color" in the palette.
-        - [ ] After the click, the active tool automatically reverts to the "Brush."
+        - [x] There is a "Color Picker" button in the toolbar.
+        - [x] Clicking it activates the tool.
+        - [x] The mouse cursor changes to an "eyedropper" icon.
+        - [x] Clicking on any pixel in the grid (painted or not) sets that pixel's color as the new "active color" in the palette.
+        - [x] After the click, the active tool automatically reverts to the "Brush."
 
-- [ ] **Task: 2.3. Implement "Clear Canvas" Button**
+- [x] **Task: 2.3. Implement "Clear Canvas" Button**
     - **AC:**
-        - [ ] There is a "New" or "Clear" button in the toolbar.
-        - [ ] Clicking this button displays a confirmation modal ("Are you sure? Unsaved progress will be lost.").
-        - [ ] If the user confirms, the "Canvas Size" modal (Task 1.2) is displayed to start a new drawing.
+        - [x] There is a "New" or "Clear" button in the toolbar.
+        - [x] Clicking this button displays a confirmation modal ("Are you sure? Unsaved progress will be lost.").
+        - [x] If the user confirms, the "Canvas Size" modal (Task 1.2) is displayed to start a new drawing.
 
-- [ ] **Task: 2.4. Implement Grid Toggle**
+- [x] **Task: 2.4. Implement Grid Toggle**
     - **AC:**
-        - [ ] There is a "Toggle Grid" button or checkbox.
-        - [ ] By default, the grid (pixel borders) is visible.
-        - [ ] Clicking the button hides the borders of all pixels.
-        - [ ] Clicking it again re-displays the borders.
+        - [x] There is a "Toggle Grid" button or checkbox.
+        - [x] By default, the grid (pixel borders) is visible.
+        - [x] Clicking the button hides the borders of all pixels.
+        - [x] Clicking it again re-displays the borders.
 
 ---
 

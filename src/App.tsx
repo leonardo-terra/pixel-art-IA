@@ -1,19 +1,34 @@
 import { useState } from 'react'
 import { PixelArtProvider, usePixelArt } from './contexts/PixelArtContext'
 import CanvasSizeModal from './components/CanvasSizeModal'
+import ClearCanvasModal from './components/ClearCanvasModal'
 import PixelGrid from './components/PixelGrid'
 import ColorPalette from './components/ColorPalette'
 import Toolbar from './components/Toolbar'
 import './App.css'
 
 const AppContent: React.FC = () => {
-  const { canvasSize, setCanvasSize } = usePixelArt()
+  const { canvasSize, setCanvasSize, clearCanvas } = usePixelArt()
   const [isModalOpen, setIsModalOpen] = useState(true)
-  const [activeTool, setActiveTool] = useState('brush')
+  const [isClearModalOpen, setIsClearModalOpen] = useState(false)
 
   const handleModalClose = (width: number, height: number) => {
     setCanvasSize({ width, height })
     setIsModalOpen(false)
+  }
+
+  const handleClearCanvas = () => {
+    setIsClearModalOpen(true)
+  }
+
+  const handleConfirmClear = () => {
+    clearCanvas()
+    setIsClearModalOpen(false)
+    setIsModalOpen(true) // Show canvas size modal to start new drawing
+  }
+
+  const handleCancelClear = () => {
+    setIsClearModalOpen(false)
   }
 
   return (
@@ -23,7 +38,7 @@ const AppContent: React.FC = () => {
       {canvasSize ? (
         <div className="editor-container">
           <div className="editor-sidebar">
-            <Toolbar activeTool={activeTool} onToolChange={setActiveTool} />
+            <Toolbar onClearCanvas={handleClearCanvas} />
             <ColorPalette />
           </div>
           <div className="editor-main">
@@ -39,6 +54,12 @@ const AppContent: React.FC = () => {
       <CanvasSizeModal 
         isOpen={isModalOpen} 
         onClose={handleModalClose} 
+      />
+      
+      <ClearCanvasModal
+        isOpen={isClearModalOpen}
+        onConfirm={handleConfirmClear}
+        onCancel={handleCancelClear}
       />
     </>
   )

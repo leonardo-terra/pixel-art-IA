@@ -18,6 +18,10 @@ interface PixelArtContextType {
   setPixel: (x: number, y: number, color: string) => void;
   getPixel: (x: number, y: number) => string;
   clearCanvas: () => void;
+  showGrid: boolean;
+  setShowGrid: (show: boolean) => void;
+  activeTool: string;
+  setActiveTool: (tool: string) => void;
 }
 
 const PixelArtContext = createContext<PixelArtContextType | undefined>(undefined);
@@ -38,6 +42,8 @@ export const PixelArtProvider: React.FC<PixelArtProviderProps> = ({ children }) 
   const [canvasSize, setCanvasSize] = useState<CanvasSize | null>(null);
   const [activeColor, setActiveColor] = useState<string>('#000000');
   const [pixels, setPixels] = useState<PixelData>({});
+  const [showGrid, setShowGrid] = useState<boolean>(true);
+  const [activeTool, setActiveTool] = useState<string>('brush');
 
   const setPixel = (x: number, y: number, color: string) => {
     const key = `${x},${y}`;
@@ -65,6 +71,10 @@ export const PixelArtProvider: React.FC<PixelArtProviderProps> = ({ children }) 
     setPixel,
     getPixel,
     clearCanvas,
+    showGrid,
+    setShowGrid,
+    activeTool,
+    setActiveTool,
   };
 
   return (
