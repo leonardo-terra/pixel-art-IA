@@ -106,22 +106,22 @@ This project is licensed under the ISC License - see the [package.json](package.
 
 - [x] **Phase 1**: Core Canvas Setup
   - [x] Basic React/Vite + TypeScript project
-  - [ ] Canvas size modal
-  - [ ] Pixel grid rendering
-  - [ ] Basic color palette
-  - [ ] Brush tool (1x1)
+  - [x] Canvas size modal
+  - [x] Pixel grid rendering
+  - [x] Basic color palette
+  - [x] Brush tool (1x1)
 
-- [ ] **Phase 2**: Core Tools
-  - [ ] Eraser tool
-  - [ ] Color picker (eyedropper)
-  - [ ] Clear canvas functionality
-  - [ ] Grid toggle
+- [x] **Phase 2**: Core Tools
+  - [x] Eraser tool
+  - [x] Color picker (eyedropper)
+  - [x] Clear canvas functionality
+  - [x] Grid toggle
 
-- [ ] **Phase 3**: Advanced Features & Polish
-  - [ ] Undo/Redo functionality
-  - [ ] Brush/Eraser size selector
-  - [ ] Zoom functionality
-  - [ ] JPEG export
+- [x] **Phase 3**: Advanced Features & Polish
+  - [x] Undo/Redo functionality
+  - [x] Brush/Eraser size selector
+  - [x] Zoom functionality
+  - [x] JPEG export
 
 ## Support
 
