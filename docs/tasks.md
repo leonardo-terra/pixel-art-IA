@@ -77,31 +77,31 @@
 
 ## Phase 3: Advanced Features & Polish ✨
 
-- [ ] **Task: 3.1. Implement Undo/Redo**
+- [x] **Task: 3.1. Implement Undo/Redo**
     - **AC:**
-        - [ ] "Undo" and "Redo" buttons exist.
-        - [ ] Each "stroke" (action from "mouse down" to "mouse up" with Brush or Eraser) is saved to history.
-        - [ ] Clicking "Undo" reverts the last paint/erase action on the canvas.
-        - [ ] Clicking "Redo" re-applies an action that was undone.
-        - [ ] The buttons are disabled if there is no action to undo/redo.
+        - [x] "Undo" and "Redo" buttons exist.
+        - [x] Each "stroke" (action from "mouse down" to "mouse up" with Brush or Eraser) is saved to history.
+        - [x] Clicking "Undo" reverts the last paint/erase action on the canvas.
+        - [x] Clicking "Redo" re-applies an action that was undone.
+        - [x] The buttons are disabled if there is no action to undo/redo.
 
-- [ ] **Task: 3.2. Implement Brush/Eraser Size Selector**
+- [x] **Task: 3.2. Implement Brush/Eraser Size Selector**
     - **AC:**
-        - [ ] Controls (e.g., "+" and "-" buttons) for "Tool Size" exist.
-        - [ ] The default size is `1x1`.
-        - [ ] Increasing the size (e.g., to `2x2`) makes the Brush/Eraser affect a 2x2 pixel area centered on the cursor.
-        - [ ] The tool size state is maintained when switching between Brush and Eraser.
+        - [x] Controls (e.g., "+" and "-" buttons) for "Tool Size" exist.
+        - [x] The default size is `1x1`.
+        - [x] Increasing the size (e.g., to `2x2`) makes the Brush/Eraser affect a 2x2 pixel area centered on the cursor.
+        - [x] The tool size state is maintained when switching between Brush and Eraser.
 
-- [ ] **Task: 3.3. Implement Zoom Functionality**
+- [x] **Task: 3.3. Implement Zoom Functionality**
     - **AC:**
-        - [ ] "Zoom In" (+) and "Zoom Out" (-) buttons exist.
-        - [ ] Clicking "Zoom In" increases the visual size of the grid (e.g., each `10x10px` pixel becomes `12x12px`).
-        - [ ] Clicking "Zoom Out" decreases the visual size.
-        - [ ] The canvas area is scrollable if it becomes larger than the viewport.
+        - [x] "Zoom In" (+) and "Zoom Out" (-) buttons exist.
+        - [x] Clicking "Zoom In" increases the visual size of the grid (e.g., each `10x10px` pixel becomes `12x12px`).
+        - [x] Clicking "Zoom Out" decreases the visual size.
+        - [x] The canvas area is scrollable if it becomes larger than the viewport.
 
-- [ ] **Task: 3.4. Implement .jpeg Export**
+- [x] **Task: 3.4. Implement .jpeg Export**
     - **AC:**
-        - [ ] There is a "Save" or "Export" button.
-        - [ ] Clicking the button converts the current state of the grid (the `divs` and their colors) into an image. (Note: This will likely require drawing to an actual `<canvas>` element and then using `toDataURL('image/jpeg')`).
-        - [ ] The browser initiates a download of a `.jpeg` file with the artwork.
-        - [ ] The exported image has the exact pixel dimensions (e.g., `32x32`), not the zoomed visual size.
+        - [x] There is a "Save" or "Export" button.
+        - [x] Clicking the button converts the current state of the grid (the `divs` and their colors) into an image. (Note: This will likely require drawing to an actual `<canvas>` element and then using `toDataURL('image/jpeg')`).
+        - [x] The browser initiates a download of a `.jpeg` file with the artwork.
+        - [x] The exported image has the exact pixel dimensions (e.g., `32x32`), not the zoomed visual size.

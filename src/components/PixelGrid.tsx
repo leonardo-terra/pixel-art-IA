@@ -11,31 +11,61 @@ const PixelGrid: React.FC = () => {
     setActiveColor, 
     setActiveTool,
     activeTool, 
-    showGrid 
+    showGrid,
+    brushSize,
+    zoomLevel,
+    startStroke,
+    addToStroke,
+    endStroke
   } = usePixelArt();
 
   if (!canvasSize) {
     return null;
   }
 
+  const paintPixels = (centerX: number, centerY: number, color: string) => {
+    const halfSize = Math.floor(brushSize / 2);
+    const pixelsToPaint = [];
+    
+    for (let dy = -halfSize; dy <= halfSize; dy++) {
+      for (let dx = -halfSize; dx <= halfSize; dx++) {
+        const x = centerX + dx;
+        const y = centerY + dy;
+        
+        if (x >= 0 && x < canvasSize.width && y >= 0 && y < canvasSize.height) {
+          setPixel(x, y, color);
+          pixelsToPaint.push({ x, y, color });
+        }
+      }
+    }
+    
+    return pixelsToPaint;
+  };
+
   const handlePixelClick = (x: number, y: number) => {
     if (activeTool === 'brush') {
-      setPixel(x, y, activeColor);
+      const pixelsToPaint = paintPixels(x, y, activeColor);
+      startStroke();
+      pixelsToPaint.forEach(pixel => addToStroke(pixel.x, pixel.y, pixel.color));
+      endStroke();
     } else if (activeTool === 'eraser') {
-      setPixel(x, y, '#ffffff'); // Erase to white
+      const pixelsToPaint = paintPixels(x, y, '#ffffff');
+      startStroke();
+      pixelsToPaint.forEach(pixel => addToStroke(pixel.x, pixel.y, pixel.color));
+      endStroke();
     } else if (activeTool === 'picker') {
       const pixelColor = getPixel(x, y);
       setActiveColor(pixelColor);
-      // Auto-switch back to brush after picking color
       setActiveTool('brush');
     }
   };
 
   const handlePixelMouseDown = (x: number, y: number) => {
-    if (activeTool === 'brush') {
-      setPixel(x, y, activeColor);
-    } else if (activeTool === 'eraser') {
-      setPixel(x, y, '#ffffff');
+    if (activeTool === 'brush' || activeTool === 'eraser') {
+      startStroke();
+      const color = activeTool === 'brush' ? activeColor : '#ffffff';
+      const pixelsToPaint = paintPixels(x, y, color);
+      pixelsToPaint.forEach(pixel => addToStroke(pixel.x, pixel.y, pixel.color));
     } else if (activeTool === 'picker') {
       const pixelColor = getPixel(x, y);
       setActiveColor(pixelColor);
@@ -45,12 +75,16 @@ const PixelGrid: React.FC = () => {
 
   const handlePixelMouseEnter = (e: React.MouseEvent, x: number, y: number) => {
     if (e.buttons === 1) { // Left mouse button is pressed
-      if (activeTool === 'brush') {
-        setPixel(x, y, activeColor);
-      } else if (activeTool === 'eraser') {
-        setPixel(x, y, '#ffffff');
+      if (activeTool === 'brush' || activeTool === 'eraser') {
+        const color = activeTool === 'brush' ? activeColor : '#ffffff';
+        const pixelsToPaint = paintPixels(x, y, color);
+        pixelsToPaint.forEach(pixel => addToStroke(pixel.x, pixel.y, pixel.color));
       }
     }
+  };
+
+  const handleMouseUp = () => {
+    endStroke();
   };
 
   const getCursorStyle = () => {
@@ -95,12 +129,14 @@ const PixelGrid: React.FC = () => {
   };
 
   return (
-    <div className="pixel-grid-container">
+    <div className="pixel-grid-container" onMouseUp={handleMouseUp}>
       <div 
         className={`pixel-grid ${showGrid ? 'with-gap' : 'no-gap'}`}
         style={{
           gridTemplateColumns: `repeat(${canvasSize.width}, 1fr)`,
           gridTemplateRows: `repeat(${canvasSize.height}, 1fr)`,
+          transform: `scale(${zoomLevel})`,
+          transformOrigin: 'top left',
         }}
       >
         {renderPixels()}

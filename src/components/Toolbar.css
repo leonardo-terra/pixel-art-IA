@@ -67,6 +67,92 @@
   border-color: #2563eb;
 }
 
+/* History controls */
+.history-controls {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.tool-button.disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  background: #9ca3af;
+  border-color: #6b7280;
+}
+
+.tool-button.disabled:hover {
+  background: #9ca3af;
+  border-color: #6b7280;
+  transform: none;
+}
+
+/* Size controls */
+.size-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.size-button {
+  min-width: 40px;
+  padding: 0.5rem;
+}
+
+.size-display {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #374151;
+  min-width: 50px;
+  text-align: center;
+  background: #f3f4f6;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* Zoom controls */
+.zoom-controls {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  justify-content: center;
+}
+
+.zoom-button {
+  min-width: 40px;
+  padding: 0.5rem;
+}
+
+.zoom-display {
+  font-size: 0.75rem;
+  font-weight: 600;
+  color: #374151;
+  min-width: 50px;
+  text-align: center;
+  background: #f3f4f6;
+  padding: 0.25rem 0.5rem;
+  border-radius: 4px;
+}
+
+/* Export controls */
+.export-controls {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+}
+
+.export-button {
+  background: linear-gradient(135deg, #10b981 0%, #059669 100%);
+  color: white;
+  border-color: #059669;
+}
+
+.export-button:hover {
+  background: linear-gradient(135deg, #059669 0%, #047857 100%);
+  border-color: #047857;
+}
+
 .tool-button {
   display: flex;
   flex-direction: column;
