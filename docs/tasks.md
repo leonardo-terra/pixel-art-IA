@@ -14,12 +14,12 @@
         - [x] The README includes technology stack information and project structure.
         - [x] The README includes development guidelines and contribution instructions.
 
-- [ ] **Task: 1.2. Implement Canvas Size Modal**
+- [x] **Task: 1.2. Implement Canvas Size Modal**
     - **AC:**
-        - [ ] On page load, a modal (pop-up) appears.
-        - [ ] The modal contains two numeric input fields: "Width" and "Height".
-        - [ ] There is a "Create" or "Start" button.
-        - [ ] Clicking "Create" closes the modal.
+        - [x] On page load, a modal (pop-up) appears.
+        - [x] The modal contains two numeric input fields: "Width" and "Height".
+        - [x] There is a "Create" or "Start" button.
+        - [x] Clicking "Create" closes the modal.
 
 - [ ] **Task: 1.3. Render the Pixel Grid (Canvas)**
     - **AC:**
